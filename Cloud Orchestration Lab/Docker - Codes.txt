@@ -1,0 +1,48 @@
+Docker File -----> Docker Image -----> Docker Container
+
+1> docker run
+2>  docker run nginx
+
+
+
+sudo apt install docker.op
+sudo docker pull ubutnu  
+
+sudo systemctl start docker
+sudo systemctl enable docker
+sudo systemctl restart docker
+
+sudo docker images
+
+docker run -it -d <image-name>  [interactive + detached{means run in bg}
+docker urn -it -d --name <container-Name> <image-name>
+docker urn -it -d --name <container-Name> -p <portNo> <image-name>
+sudo docker ps  -----> For Listing All Created Containers
+
+docker exec -ti <container-name> bash ------> used to move inside a container[-ti means run in interactive mode]
+ 
+apt install nginx -y  ----> command to install nginx
+service nginx status -----> ngnix running or not
+service ngnix start ---> command to start nginx
+
+docker stop <container-id>
+docker ps -a ------> shows all container wheather they are exited or not
+docker start <container-name/container-id>
+docker kill <container-id> -----> forcefully deleted container
+docker restart <container-name>
+
+docker rm -f <container-id>   ------> forcefully remove the container even from  list also
+docker commit MyContainer <image-name>
+
+
+
+// How to push to dokcer hubt [repo similar to github]
+docker tag <container-name> <user-name/container-name> ------> [Used for changing the name of conatiner make sure container is stopped first] 
+docker push <image-name>  -----> before pushing mush login with docker account using docker login then usernmae password {image-name must start with username/<image-name>
+
+
+// how to remove image
+docker -rmi <image-name>
+
+// how to pull a image form docker rep
+docker pull <image-name>  -----> image name must be same as docker hub image name
